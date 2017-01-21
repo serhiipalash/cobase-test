@@ -12,12 +12,12 @@ module.exports = {
 
   entry: DEBUG ? [
     'babel-polyfill',
-    path.join(__dirname, '..', 'src', 'app.js'),
+    path.join(__dirname, '..', 'src', 'js', 'app.js'),
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
   ] : [
     'babel-polyfill',
-    path.join(__dirname, '..', 'src', 'app.js'),
+    path.join(__dirname, '..', 'src', 'js', 'app.js'),
   ],
 
   output: {
@@ -36,6 +36,18 @@ module.exports = {
       {
         test: /\.s?css$/,
         loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.(jpe?g|gif|png)$/i,
+        loader: 'url-loader?limit=10000&name=img/[name].[ext]'
+      },
+      {
+        test: /\.(otf|eot|svg|ttf|woff(2)?)(\?[a-z0-9=&#.]+)?$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
+      },
+      {
+        test: /\.ogg$/,
+        loader: 'file-loader?name=audio/[name].[ext]'
       },
     ]
   },

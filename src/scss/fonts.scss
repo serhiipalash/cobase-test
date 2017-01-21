@@ -1,0 +1,36 @@
+ /* fonts */
+@import "_fonts.scss";
+
+/* urls */
+$url_1: url("../../static/fonts/GT-Eesti-Pro-Display-Trial-Bold.otf");
+$url_2: url("../../static/fonts/GT-Eesti-Pro-Display-Trial-Light.otf");
+$url_3: url("../../static/fonts/Heebo-Regular.woff2");
+$url_4: url("../../static/fonts/Heebo-Medium.woff2");
+
+@font-face {
+  font-family: $eesti-bold;
+  src: $url_1 format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: $eesti-light;
+  src: $url_2 format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: $heebo;
+  src: $url_3 format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: $heebo-md;
+  src: $url_4 format('woff2');
+  font-style: normal;
+  font-weight: 500;
+}

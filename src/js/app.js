@@ -6,7 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
 import 'normalize.css';
-import './scss/main.scss'
+import '../scss/main.scss'
+import '../scss/fonts.scss'
 
 import Home from './components/pages/Home';
 
