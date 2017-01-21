@@ -8,7 +8,7 @@ import image from '../../../../../static/img/1@2x.png';
 import './style.scss';
 
 
-class Home extends Component {
+class TaskManager extends Component {
   componentDidMount() {
     setTimeout(() => {
       let audio = new Audio(sound);
@@ -19,8 +19,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home">
-        <h1>Home Page</h1>
+      <div className="task_manager">
+        <h1>Task Manager</h1>
         <img src={image} />
       </div>
     );
@@ -33,4 +33,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(TaskManager);

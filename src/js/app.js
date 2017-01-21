@@ -9,7 +9,7 @@ import 'normalize.css';
 import '../scss/main.scss'
 import '../scss/fonts.scss'
 
-import Home from './components/pages/Home';
+import TaskManager from './components/pages/TaskManager';
 
 import rootReducer from './reducers';
 
@@ -31,7 +31,7 @@ if (module.hot) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={Home} />
+      <Route path="/" component={TaskManager} />
     </Router>
   </Provider>,
   document.getElementById('app')
