@@ -10,6 +10,11 @@
   right: 0;
   color: $white;
   background-color: $topbar_bg;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 18px;
+  padding-right: 18px;
 
   &--sidebar_visible {
     left: 250px;
@@ -19,5 +24,33 @@
   @media (max-width: 767px) {
     left: 0;
     width: 100%;
+  }
+
+  &__left_section {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__right_section {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__link {
+    font-family: $sfns;
+    font-size: 15px;
+    color: $white;
+    letter-spacing: 0;
+    margin-right: 30px;
+
+    &:hover, &--active {
+      @media (min-width: 768px) {
+        color: $mercury;
+      }
+    }
   }
 }

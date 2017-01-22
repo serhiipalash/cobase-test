@@ -18,6 +18,9 @@ import TaskManager from './components/pages/TaskManager';
 import Drawings from './components/pages/Drawings';
 import Employees from './components/pages/Employees';
 import Reports from './components/pages/Reports';
+import Projects from './components/pages/Projects';
+import People from './components/pages/People';
+import Team from './components/pages/Team';
 
 import rootReducer from './reducers';
 
@@ -46,6 +49,9 @@ ReactDOM.render(
         <Route path="drawings" components={{ main: Drawings, sidebar: SideBar }}/>
         <Route path="employees" components={{ main: Employees, sidebar: SideBar }}/>
         <Route path="reports" components={{ main: Reports, sidebar: SideBar }}/>
+        <Route path="projects" components={{ main: Projects, sidebar: SideBar }}/>
+        <Route path="people" components={{ main: People, sidebar: SideBar }}/>
+        <Route path="team" components={{ main: Team, sidebar: SideBar }}/>
       </Route>
     </Router>
   </Provider>,

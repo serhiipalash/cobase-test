@@ -12,11 +12,17 @@ class SvgLoader {
       drawings: 'drawings.svg',
       employees: 'employees.svg',
       reports: 'reports.svg',
+      more_button: 'more_button.svg',
+      search_button: 'search_button.svg',
+      globe_button: 'globe_button.svg',
+      settings_button: 'settings_button.svg',
     };
 
+    /* eslint-disable */
     Object.keys(this._svg).forEach((item) => {
       this._svg[item] = (<i className="svg-icon-wr" dangerouslySetInnerHTML={{__html: require('../../../static/svg/' + this._svg[item])}} />);
     });
+    /* eslint-enable */
   }
 
   get svg() {

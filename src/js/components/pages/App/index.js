@@ -2,9 +2,15 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import { init } from '../../../actions/appActions';
+import { loggedin } from '../../../actions/userActions';
+
 import isRetinaDisplay from '../../../utils/isRetinaDisplay';
 
 import TopBar from '../../organisms/TopBar';
+
+import User from '../../../../../static/img/User.png';
+import User2x from '../../../../../static/img/User@2x.png';
+
 
 import './style.scss';
 
@@ -14,6 +20,9 @@ class App extends Component {
     this.props.dispatch(init({
       isRetinaDisplay: isRetinaDisplay(),
     }));
+    this.props.dispatch(loggedin({
+      image: this.props.data.app.isRetinaDisplay ? User2x : User,
+    }))
   }
 
   render() {
@@ -35,6 +44,7 @@ App.propTypes = {
   dispatch: PropTypes.func,
   main: PropTypes.element.isRequired,
   sidebar: PropTypes.element.isRequired,
+  data: PropTypes.object,
 };
 
 function mapStateToProps(state) {

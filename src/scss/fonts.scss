@@ -6,6 +6,7 @@ $url_1: url("../../static/fonts/GT-Eesti-Pro-Display-Trial-Bold.otf");
 $url_2: url("../../static/fonts/GT-Eesti-Pro-Display-Trial-Light.otf");
 $url_3: url("../../static/fonts/Heebo-Regular.woff2");
 $url_4: url("../../static/fonts/Heebo-Medium.woff2");
+$url_5: url("../../static/fonts/SFNS-Display-Regular.woff");
 
 @font-face {
   font-family: $eesti-bold;
@@ -33,4 +34,11 @@ $url_4: url("../../static/fonts/Heebo-Medium.woff2");
   src: $url_4 format('woff2');
   font-style: normal;
   font-weight: 500;
+}
+
+@font-face {
+  font-family: $sfns;
+  src: $url_5 format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
