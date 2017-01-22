@@ -1,0 +1,43 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.options_item {
+  height: 68px;
+  padding: 10px 10px 10px 30px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    @media (min-width: 768px) {
+      background-color: $gray-blue-light;
+    }
+  }
+
+  &--active {
+    background-color: $gray-blue-light;
+  }
+
+  &__title_block {
+    display: inline-block;
+    padding-left: 15px;
+    padding-top: 7px;
+    height: 48px;
+  }
+
+  &__title {
+    font-family: $heebo;
+    font-size: 15px;
+    color: $white;
+    letter-spacing: 0;
+  }
+
+  &__info {
+    font-family: $heebo;
+    font-size: 13px;
+    color: $gray-blue;
+    letter-spacing: 0;
+    line-height: 19px;
+  }
+}

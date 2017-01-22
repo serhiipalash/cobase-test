@@ -1,21 +1,17 @@
 import {
-  START,
+  APP_INIT,
 } from '../constants/ActionTypes';
 
 const initialState = {
-  menu: {
-    visible: false,
-  },
+  isRetinaDisplay: false,
 };
 
 function appReducer(state = initialState, action) {
   switch (action.type) {
-    case START:
+    case APP_INIT:
       return {
         ...state,
-        menu: {
-          visible: true,
-        },
+        ...action.state,
       };
     default:
       return state;

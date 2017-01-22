@@ -1,0 +1,61 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.progress_bar {
+  margin-bottom: 14px;
+
+  &__title {
+    font-family: $heebo;
+    font-size: 13px;
+    color: $white;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__line {
+    border-radius: 100px;
+    height: 6px;
+    display: flex;
+    flex-grow: 1;
+    margin-right: 9px;
+
+    &--purple {
+      background-color: rgba(171, 125, 246, 0.2);
+    }
+
+    &--marine {
+      background-color: rgba(38, 194, 201, 0.2);
+    }
+  }
+
+  &__progress_line {
+    width: 0;
+    opacity: 1;
+    border-radius: 100px;
+    height: 6px;
+
+    &--purple {
+      background: rgba(171, 125, 246, 1);
+    }
+
+    &--marine {
+      background: rgba(38, 194, 201, 1);
+    }
+  }
+
+  &__progress {
+    display: flex;
+    font-family: $heebo;
+    font-size: 13px;
+    color: $gray-blue;
+    letter-spacing: 0;
+    line-height: 19px;
+  }
+}

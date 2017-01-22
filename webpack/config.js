@@ -45,16 +45,20 @@ module.exports = {
         loaders: ['style', 'css', 'sass']
       },
       {
-        test: /\.(jpe?g|gif|png)$/i,
+        test: /\.(jpe?g|gif|png|ico)$/i,
         loader: 'url-loader?limit=10000&name=img/[name].[ext]'
       },
       {
-        test: /\.(otf|eot|svg|ttf|woff(2)?)(\?[a-z0-9=&#.]+)?$/,
+        test: /\.(otf|eot|ttf|woff(2)?)(\?[a-z0-9=&#.]+)?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
       },
       {
         test: /\.ogg$/,
         loader: 'file-loader?name=audio/[name].[ext]'
+      },
+      {
+        test: /\.(svg)$/,
+        loader: 'raw-loader'
       },
     ]
   },
@@ -68,7 +72,8 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: 'index.ejs',
-        environment: 'development'
+        environment: 'development',
+        favicon: path.join(__dirname, '..', 'static', 'img', 'favicon.ico'),
       }),
     ] : [
       new webpack.optimize.UglifyJsPlugin({
@@ -91,7 +96,8 @@ module.exports = {
           minifyCSS: true,
           minifyURLs: true
         },
-        environment: 'production'
+        environment: 'production',
+        favicon: path.join(__dirname, '..', 'static', 'img', 'favicon.ico'),
       }),
       new webpack.ContextReplacementPlugin(/node_modules\/moment\/locale/, /en-gb.js$/),
   ])

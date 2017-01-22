@@ -1,0 +1,23 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.topbar {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: $white;
+  background-color: $topbar_bg;
+
+  &--sidebar_visible {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+
+  @media (max-width: 767px) {
+    left: 0;
+    width: 100%;
+  }
+}

@@ -1,1 +1,1 @@
-export const START = 'START';
+export const APP_INIT = 'APP_INIT';

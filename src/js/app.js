@@ -9,7 +9,15 @@ import 'normalize.css';
 import '../scss/main.scss'
 import '../scss/fonts.scss'
 
+import App from './components/pages/App';
+import SideBar from './components/organisms/SideBar';
+
+import Home from './components/pages/Home';
+import Overview from './components/pages/Overview';
 import TaskManager from './components/pages/TaskManager';
+import Drawings from './components/pages/Drawings';
+import Employees from './components/pages/Employees';
+import Reports from './components/pages/Reports';
 
 import rootReducer from './reducers';
 
@@ -31,7 +39,14 @@ if (module.hot) {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={TaskManager} />
+      <Route component={App}>
+        <Route path="/" components={{ main: Home, sidebar: SideBar }}/>
+        <Route path="overview" components={{ main: Overview, sidebar: SideBar }}/>
+        <Route path="task-manager" components={{ main: TaskManager, sidebar: SideBar }}/>
+        <Route path="drawings" components={{ main: Drawings, sidebar: SideBar }}/>
+        <Route path="employees" components={{ main: Employees, sidebar: SideBar }}/>
+        <Route path="reports" components={{ main: Reports, sidebar: SideBar }}/>
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('app')

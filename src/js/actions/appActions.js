@@ -1,3 +1,5 @@
-import { START } from '../constants/ActionTypes';
+import {
+  APP_INIT,
+} from '../constants/ActionTypes';
 
-export const start = () => { type: START };
+export const init = (state) => ({ type: APP_INIT, state });

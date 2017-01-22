@@ -18,7 +18,7 @@ html, body {
 body {
   position: fixed;
   color: $black;
-  background-color: $bg-color;
+  background-color: $white;
   font-family: $eesti-light;
 }
 
@@ -29,6 +29,11 @@ a {
 h1, h2 {
   font-weight: 400;
   text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 p, div {

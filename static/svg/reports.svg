@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Section Symbols / Blue 48px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menus-/-#13" transform="translate(-30.000000, -400.000000)" fill="#FD7B1F">
+            <g id="Options" transform="translate(0.000000, 91.000000)">
+                <g id="Ratings" transform="translate(30.000000, 309.000000)">
+                    <g id="Section-Symbols-/-20%-Orange-48px">
+                        <rect id="Background" fill-opacity="0.201936141" x="0" y="0" width="48" height="48" rx="12"></rect>
+                        <path d="M32,24 C32,22.9 32.9,22 34,22 L34,18 C34,16.9 33.1,16 32,16 L16,16 C14.9,16 14.01,16.9 14.01,18 L14.01,22 C15.11,22 16,22.9 16,24 C16,25.1 15.11,26 14,26 L14,30 C14,31.1 14.9,32 16,32 L32,32 C33.1,32 34,31.1 34,30 L34,26 C32.9,26 32,25.1 32,24 L32,24 Z M27.58,28.8 L24,26.5 L20.42,28.8 L21.5,24.68 L18.21,21.99 L22.45,21.74 L24,17.8 L25.54,21.75 L29.78,22 L26.49,24.69 L27.58,28.8 L27.58,28.8 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
