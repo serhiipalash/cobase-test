@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from "react-helmet";
 
-import './style.scss';
+import Layout from '../../molecules/Layout';
+import PageHeader from '../../molecules/PageHeader';
 
 
 class Team extends Component {
   render() {
     return (
-      <div className="team">
+      <Layout>
         <Helmet title="Team | CoBase" />
-        <h1>Team</h1>
-      </div>
+        <PageHeader>
+          Team Page
+        </PageHeader>
+      </Layout>
     );
   }
 }

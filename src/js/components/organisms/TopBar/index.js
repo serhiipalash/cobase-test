@@ -15,35 +15,27 @@ import './style.scss';
 
 
 class TopBar extends Component {
+  /* eslint-disable */
   moreButtonClicked() {
-    /* eslint-disable */
     console.info('moreButtonClicked');
-    /* eslint-enable */
   }
 
   userPictureClicked() {
-    /* eslint-disable */
     console.info('userPictureClicked');
-    /* eslint-enable */
   }
 
   globeButtonClicked() {
-    /* eslint-disable */
     console.info('globeButtonClicked');
-    /* eslint-enable */
   }
 
   searchButtonClicked() {
-    /* eslint-disable */
     console.info('searchButtonClicked');
-    /* eslint-enable */
   }
 
   settingsButtonClicked() {
-    /* eslint-disable */
     console.info('settingsButtonClicked');
-    /* eslint-enable */
   }
+  /* eslint-enable */
 
   render() {
     const { isSidebarVisible, data: { user, app: { isRetinaDisplay } } } = this.props;

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from "react-helmet";
 
+import Layout from '../../molecules/Layout';
+import PageHeader from '../../molecules/PageHeader';
+
 import { playSound } from '../../../utils/AudioPlayer.js';
 import trembling from '../../../../../static/audio/trembling.ogg';
-
-import './style.scss';
 
 
 class TaskManager extends Component {
@@ -15,10 +16,12 @@ class TaskManager extends Component {
 
   render() {
     return (
-      <div className="task_manager">
+      <Layout>
         <Helmet title="Task Manager | CoBase" />
-        <h1>Task Manager</h1>
-      </div>
+        <PageHeader>
+          Task Manager
+        </PageHeader>
+      </Layout>
     );
   }
 }

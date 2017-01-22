@@ -1,0 +1,19 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.page_header {
+  border-bottom: 1px solid $gray-light;
+  height: 51px;
+  padding-left: 14px;
+  padding-right: 14px;
+  display: flex;
+  align-items: center;
+  font-family: $heebo;
+  color: $gray-blue;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 19px;
+  background-color: $white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
