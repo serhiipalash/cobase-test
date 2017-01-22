@@ -4,7 +4,6 @@
 .layout {
   color: $black;
   font-family: $eesti-light;
-  height: 2000px;
   width: 100%;
   max-width: 780px;
   background-color: $white-gray;
@@ -13,4 +12,5 @@
   box-shadow: inset 0 -1px 0 0 $gray-shadow;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }

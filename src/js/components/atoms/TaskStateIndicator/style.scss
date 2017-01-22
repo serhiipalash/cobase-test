@@ -1,0 +1,27 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.task_state_indicator {
+  border: 1px solid $purple;
+  border-radius: 120px;
+  font-family: $heebo;
+  font-size: 13px;
+  color: $purple;
+  letter-spacing: 0;
+  line-height: 19px;
+  padding: 0 10px;
+  margin-right: 10px;
+
+  &--in_process {
+    border-color: $purple;
+    color: $purple;
+  }
+  &--completed {
+    border-color: $light-green;
+    color: $light-green;
+  }
+  &--paused {
+    border-color: $gray-blue;
+    color: $gray-blue;
+  }
+}
