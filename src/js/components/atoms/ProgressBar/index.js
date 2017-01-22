@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import './style.scss';
 
@@ -20,5 +20,11 @@ class ProgressBar extends Component {
     );
   }
 }
+
+ProgressBar.propTypes = {
+  title: PropTypes.string,
+  progress: PropTypes.number,
+  color: PropTypes.string,
+};
 
 export default ProgressBar;
