@@ -94,6 +94,15 @@ class TaskBoard extends Component {
           <TaskBoardTags tags={task.tags} />
           <TaskBoardGallery images={task.images} />
           <TaskBoardChecklist task={task} />
+          <div className="task_board__bottom_buttons">
+            <CompleteButton
+              onClick={this.completeButtonClicked.bind(this, task.id)}
+            />
+            <span className="task_board__text_divider">or</span>
+            <PauseButton
+              onClick={this.pauseButtonClicked.bind(this, task.id)}
+            />
+          </div>
         </div>
       );
     } else {
