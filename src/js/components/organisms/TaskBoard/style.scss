@@ -6,13 +6,47 @@
   flex-direction: column;
   justify-content: flex-start;
 
+  &__top_buttons {
+    font-family: $heebo;
+    color: $gray-blue;
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 19px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__top_buttons_left {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+  }
+
+  &__text_divider {
+    display: inline-flex;
+    margin-right: 11px;
+    margin-left: 11px;
+  }
+
+  &__top_buttons_right {
+    display: flex;
+    margin-left: auto;
+    width: 58px;
+    justify-content: space-between;
+  }
+
   &__header {
     font-family: $heebo;
     font-size: 34px;
     color: $sidebar-bg;
     letter-spacing: -0.5px;
     line-height: 44px;
-    margin-top: 8px;
+    margin-top: 27px;
     margin-bottom: 8px;
 
     @media (max-width: 767px) {

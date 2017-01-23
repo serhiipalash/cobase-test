@@ -25,6 +25,9 @@ class SvgLoader {
       plus_button: 'plus_button.svg',
       small_arrow_right: 'small_arrow_right.svg',
       small_arrow_left: 'small_arrow_left.svg',
+      pause: 'pause.svg',
+      reassign: 'reassign.svg',
+      edit_gray: 'edit_gray.svg',
     };
 
     /* eslint-disable */

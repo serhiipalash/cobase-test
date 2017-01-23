@@ -15,6 +15,7 @@
   flex-direction: row;
   padding-left: 18px;
   padding-right: 18px;
+  z-index: 100;
 
   &--sidebar_visible {
     left: 250px;
