@@ -1,4 +1,6 @@
 export const APP_INIT = 'APP_INIT';
+export const APP_SHOW_SIDEBAR = 'APP_SHOW_SIDEBAR';
+export const APP_HIDE_SIDEBAR = 'APP_HIDE_SIDEBAR';
 
 export const USER_LOGGEDIN = 'USER_LOGGEDIN';
 

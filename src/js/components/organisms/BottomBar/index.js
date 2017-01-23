@@ -27,8 +27,10 @@ class BottomBar extends Component {
   /* eslint-enable */
 
   render() {
+    const { app: { isSidebarVisible } } = this.props.data;
+
     return (
-      <div className="bottom_bar">
+      <div className={`bottom_bar ${isSidebarVisible ? 'bottom_bar--sidebar_visible' : ''}`}>
         <div className="bottom_bar__content">
           <Link
             to="/drawings"

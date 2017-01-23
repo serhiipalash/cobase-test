@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { init } from '../../../actions/appActions';
+import { init, showSidebar, hideSidebar } from '../../../actions/appActions';
 import { loggedin } from '../../../actions/userActions';
 import { loadAll as usersLoadAll } from '../../../actions/usersActions';
 
@@ -18,6 +18,17 @@ import './style.scss';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleResize = () => {
+      if (window.innerWidth > 767) {
+        this.props.dispatch(showSidebar());
+      } else {
+        this.props.dispatch(hideSidebar());
+      }
+    };
+  }
+
   componentWillMount() {
     this.props.dispatch(init({
       isRetinaDisplay: isRetinaDisplay(),
@@ -28,16 +39,29 @@ class App extends Component {
     }));
 
     this.props.dispatch(usersLoadAll());
+    this.props.dispatch(usersLoadAll());
+
+    if (window.innerWidth > 767 && this.props.sidebar) {
+      this.props.dispatch(showSidebar());
+    } else {
+      this.props.dispatch(hideSidebar());
+    }
+
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   render() {
-    const { main, sidebar } = this.props;
+    const { main, sidebar, data: { app: { isSidebarVisible } } } = this.props;
 
     return (
-      <div className={`app ${sidebar ? ' app--sidebar' : ''}`}>
-        <TopBar isSidebarVisible={!!sidebar}/>
+      <div className={`app ${isSidebarVisible ? 'app--sidebar' : ''}`}>
+        <TopBar />
         {sidebar}
-        <div className="app__content_wrapper">
+        <div className={`app__content_wrapper ${isSidebarVisible ? 'app__content_wrapper--sidebar_visible' : ''}`}>
           {main}
         </div>
         <BottomBar />

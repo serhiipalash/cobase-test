@@ -16,8 +16,10 @@
   overflow: auto;
   z-index: 100;
 
-  @media (max-width: 767px) {
-    display: none;
+  transition: left 0.4s ease-in;
+
+  &--hidden {
+    left: -250px;
   }
 
   &__logo {

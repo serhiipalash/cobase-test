@@ -14,13 +14,13 @@ import './style.scss';
 class SideBar extends Component {
   render() {
     const {
-      app: { isRetinaDisplay },
+      app: { isRetinaDisplay, isSidebarVisible },
       taskManager: { activeTaskId },
       routing: { locationBeforeTransitions: { pathname } }
     } = this.props.data;
 
     return (
-      <div className="sidebar">
+      <div className={`sidebar ${isSidebarVisible ? 'sidebar--visible' : 'sidebar--hidden'}`}>
         <header className="sidebar__header">
           <Link to="/">
             <img

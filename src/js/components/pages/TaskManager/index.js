@@ -15,6 +15,7 @@ import SvgLoader from '../../../utils/SvgLoader';
 
 import { playSound } from '../../../utils/AudioPlayer';
 import shrt from '../../../../../static/audio/shrt.ogg';
+import attracted2 from '../../../../../static/audio/attracted-2.ogg';
 
 import './style.scss';
 
@@ -38,6 +39,8 @@ class TaskManager extends Component {
       let prevTaskId = ids[ids.indexOf(activeTaskId) - 1];
       this.props.dispatch(setActive(prevTaskId));
       playSound({ url: shrt });
+    } else {
+      playSound({ url: attracted2 });
     }
   }
 
@@ -50,6 +53,8 @@ class TaskManager extends Component {
       let nextTaskId = ids[ids.indexOf(activeTaskId) + 1];
       this.props.dispatch(setActive(nextTaskId));
       playSound({ url: shrt });
+    } else {
+      playSound({ url: attracted2 });
     }
   }
 

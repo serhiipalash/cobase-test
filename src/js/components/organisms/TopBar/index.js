@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
+import { showSidebar, hideSidebar } from '../../../actions/appActions';
+
+import { playSound } from '../../../utils/AudioPlayer';
+import gesture from '../../../../../static/audio/gesture.ogg';
+
 import MoreButton from '../../atoms/MoreButton';
 import HamburgerMenuButton from '../../atoms/HamburgerMenuButton';
 import SearchButton from '../../atoms/SearchButton';
@@ -22,6 +27,14 @@ class TopBar extends Component {
 
   hamburgerMenuButtonClicked() {
     console.info('HamburgerMenuButton Clicked');
+    const { app: { isSidebarVisible } } = this.props.data;
+
+    if (isSidebarVisible) {
+      this.props.dispatch(hideSidebar());
+    } else {
+      this.props.dispatch(showSidebar());
+    }
+    playSound({ url: gesture });
   }
 
   userPictureClicked() {
@@ -42,7 +55,7 @@ class TopBar extends Component {
   /* eslint-enable */
 
   render() {
-    const { isSidebarVisible, data: { user } } = this.props;
+    const { user, app: { isSidebarVisible } } = this.props.data;
 
     return (
       <div className={`topbar ${isSidebarVisible ? ' topbar--sidebar_visible' : ''}`}>
@@ -102,7 +115,6 @@ class TopBar extends Component {
 }
 
 TopBar.propTypes = {
-  isSidebarVisible: PropTypes.bool.isRequired,
   data: PropTypes.object,
 };
 

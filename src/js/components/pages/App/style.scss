@@ -32,5 +32,16 @@
       padding-left: 13px;
       padding-bottom: 87px;
     }
+
+    transition: left 0.4s ease-in, right 0.4s ease-in;
+    left: 0;
+    right: 0;
+    position: absolute;
+    min-width: 320px;
+
+    &--sidebar_visible {
+      left: 250px !important;
+      right: -250px;
+    }
   }
 }
