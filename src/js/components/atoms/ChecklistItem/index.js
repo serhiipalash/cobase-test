@@ -3,14 +3,20 @@ import { Checkbox } from 'antd';
 
 import './style.scss';
 
+import { playSound } from '../../../utils/AudioPlayer';
+import noManners from '../../../../../static/audio/no-manners.ogg';
 
 class ChecklistItem extends Component {
+  itemClicked() {
+    playSound({ url: noManners });
+  }
+
   render() {
     const { text, done, onChange } = this.props;
 
     return (
       <div className="checklist_item">
-        <Checkbox checked={done} onChange={onChange}>
+        <Checkbox checked={done} onChange={onChange} onClick={this.itemClicked.bind(this)}>
           <span className={`checklist_item__label ${done ? 'checklist_item__label--crossed' : ''}`}>{text}</span>
         </Checkbox>
       </div>
