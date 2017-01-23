@@ -2,4 +2,16 @@
   font-size: 8px;
   margin-right: 25px;
   cursor: pointer;
+
+  &--xs-hidden {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &--xs-visible {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 import MoreButton from '../../atoms/MoreButton';
+import HamburgerMenuButton from '../../atoms/HamburgerMenuButton';
 import SearchButton from '../../atoms/SearchButton';
 import GlobeButton from '../../atoms/GlobeButton';
 import SettingsButton from '../../atoms/SettingsButton';
@@ -17,23 +18,27 @@ import './style.scss';
 class TopBar extends Component {
   /* eslint-disable */
   moreButtonClicked() {
-    console.info('moreButtonClicked');
+    console.info('MoreButton Clicked');
+  }
+
+  hamburgerMenuButtonClicked() {
+    console.info('HamburgerMenuButton Clicked');
   }
 
   userPictureClicked() {
-    console.info('userPictureClicked');
+    console.info('UserPicture Clicked');
   }
 
   globeButtonClicked() {
-    console.info('globeButtonClicked');
+    console.info('GlobeButton Clicked');
   }
 
   searchButtonClicked() {
-    console.info('searchButtonClicked');
+    console.info('SearchButton Clicked');
   }
 
   settingsButtonClicked() {
-    console.info('settingsButtonClicked');
+    console.info('SettingsButton Clicked');
   }
   /* eslint-enable */
 
@@ -64,11 +69,19 @@ class TopBar extends Component {
           >
             Team
           </Link>
-          <MoreButton onClick={this.moreButtonClicked.bind(this)} />
+          <MoreButton
+            onClick={this.moreButtonClicked.bind(this)}
+            xsHidden={true}
+          />
+          <HamburgerMenuButton
+            onClick={this.hamburgerMenuButtonClicked.bind(this)}
+            xsVisible={true}
+          />
         </section>
         <section className="topbar__right_section">
           <SearchButton
             onClick={this.searchButtonClicked.bind(this)}
+            xsHidden={true}
           />
           <GlobeButton
             active={true}
@@ -76,10 +89,12 @@ class TopBar extends Component {
           />
           <SettingsButton
             onClick={this.settingsButtonClicked.bind(this)}
+            xsHidden={true}
           />
           <UserPicture
             image={user ? user.image : isRetinaDisplay ? defaultUser2x : defaultUser}
             onClick={this.userPictureClicked.bind(this)}
+            xsHidden={true}
           />
         </section>
       </div>

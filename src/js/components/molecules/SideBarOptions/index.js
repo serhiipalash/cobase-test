@@ -18,7 +18,7 @@ class SideBarOptions extends Component {
           pathname="/overview"
         />
         <SideBarOptionsItem
-          icon="green_task"
+          icon="task_manager"
           title="Task manager"
           info="23 new tasks"
           pathname="/task-manager"

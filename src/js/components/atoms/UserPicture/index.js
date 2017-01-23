@@ -12,11 +12,14 @@ class UserPicture extends Component {
   }
 
   render() {
-    const { image, onClick } = this.props;
+    const { image, onClick, xsHidden, xsVisible } = this.props;
 
     return (
       <img
-        className={`user_picture ${onClick ? ' user_picture--button' : ''}`}
+        className={`user_picture ${onClick ? ' user_picture--button' : ''}${
+          xsHidden ? ' user_picture--xs-hidden' :
+          xsVisible ? ' user_picture--xs-visible' : ''
+        }`}
         src={image}
         onClick={onClick}
       />
@@ -27,6 +30,8 @@ class UserPicture extends Component {
 UserPicture.propTypes = {
   onClick: PropTypes.func,
   image: PropTypes.string,
+  xsVisible: PropTypes.bool,
+  xsHidden: PropTypes.bool,
 };
 
 export default UserPicture;

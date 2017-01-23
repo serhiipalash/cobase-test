@@ -8,7 +8,7 @@ const TaskStateIndicator = ({ inProcess=true, completed, paused }) => {
       className={`task_state_indicator task_state_indicator--${
         completed ? 'completed' :
         paused ? 'paused' :
-        'in_process'
+        inProcess ? 'in_process' : ''
       }`}
     >
       {

@@ -5,7 +5,7 @@ import SvgLoader from '../../../utils/SvgLoader';
 import './style.scss';
 
 
-class HamburgerMenuButton extends Component {
+class EditButton extends Component {
   constructor(props) {
     super(props);
     this.svg = SvgLoader;
@@ -16,21 +16,21 @@ class HamburgerMenuButton extends Component {
 
     return (
       <span
-        className={`hamburger_menu_button ${
-          xsHidden ? 'hamburger_menu_button--xs-hidden' :
-          xsVisible ? 'hamburger_menu_button--xs-visible' : ''}`}
+        className={`edit_button ${
+          xsHidden ? 'edit_button--xs-hidden' :
+          xsVisible ? 'edit_button--xs-visible' : ''}`}
         onClick={onClick}
       >
-        {this.svg.hamburger_menu_button}
+        {this.svg.edit_white}
       </span>
     );
   }
 }
 
-HamburgerMenuButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+EditButton.propTypes = {
+  onClick: PropTypes.func,
   xsVisible: PropTypes.bool,
   xsHidden: PropTypes.bool,
 };
 
-export default HamburgerMenuButton;
+export default EditButton;

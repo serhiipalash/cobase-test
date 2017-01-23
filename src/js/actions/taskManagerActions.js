@@ -18,7 +18,7 @@ export const loadAll = () => {
       createdAt: Date.now() - 7*24*60*60*1000,
       lastUpdate: Date.now() - 22*60*1000,
       employees: [],
-      tags: [],
+      tags: ['Thirdfloor', 'bathroom', 'tilework'],
       images: [],
       checklist: [
         {
@@ -32,6 +32,7 @@ export const loadAll = () => {
           done: false,
         },
       ],
+      progress: 0.7,
     },
     {
       id: v4(),
@@ -43,7 +44,7 @@ export const loadAll = () => {
       createdAt: Date.now() - 7*24*60*60*1000,
       lastUpdate: Date.now() - 15*60*1000,
       employees: [],
-      tags: [],
+      tags: ['Firstfloor', 'bedroom', 'insulation', 'parquet'],
       images: [],
       checklist: [
         {
@@ -57,6 +58,7 @@ export const loadAll = () => {
           done: false,
         },
       ],
+      progress: 0.3,
     },
   ];
   /* Hard code end */

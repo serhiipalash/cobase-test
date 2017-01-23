@@ -1,7 +1,9 @@
-.hamburger_menu_button {
-  font-size: 8px;
-  margin-right: 25px;
+.calendar_button {
+  font-size: 1px;
   cursor: pointer;
+  display: inline-block;
+  position: relative;
+  margin-top: -5px;
 
   &--xs-hidden {
     @media (max-width: 767px) {

@@ -5,6 +5,18 @@
   display: inline-block;
   position: relative;
 
+  &--xs-hidden {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &--xs-visible {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
   &__red_marker {
     display: inline-block;
     font-style: normal;

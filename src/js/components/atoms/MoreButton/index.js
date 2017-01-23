@@ -12,8 +12,13 @@ class MoreButton extends Component {
   }
 
   render() {
+    const { onClick, xsHidden, xsVisible } = this.props;
+
     return (
-      <span className="more_button" onClick={this.props.onClick}>
+      <span className={`more_button ${
+          xsHidden ? 'more_button--xs-hidden' :
+          xsVisible ? 'more_button--xs-visible' : ''}`}
+        onClick={onClick}>
         {this.svg.more_button}
       </span>
     );
@@ -22,6 +27,8 @@ class MoreButton extends Component {
 
 MoreButton.propTypes = {
   onClick: PropTypes.func.isRequired,
+  xsVisible: PropTypes.bool,
+  xsHidden: PropTypes.bool,
 };
 
 export default MoreButton;

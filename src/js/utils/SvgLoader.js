@@ -8,7 +8,7 @@ class SvgLoader {
     this._svg = {
       white_logo: 'white_logo.svg',
       overview: 'overview.svg',
-      green_task: 'green_task.svg',
+      task_manager: 'task_manager.svg',
       drawings: 'drawings.svg',
       employees: 'employees.svg',
       reports: 'reports.svg',
@@ -16,6 +16,12 @@ class SvgLoader {
       search_button: 'search_button.svg',
       globe_button: 'globe_button.svg',
       settings_button: 'settings_button.svg',
+      hamburger_menu_button: 'hamburger_menu_button.svg',
+      drawings_white: 'drawings_white.svg',
+      employees_white: 'employees_white.svg',
+      task_manager_blue: 'task_manager_blue.svg',
+      calendar_white: 'calendar_white.svg',
+      edit_white: 'edit_white.svg',
     };
 
     /* eslint-disable */

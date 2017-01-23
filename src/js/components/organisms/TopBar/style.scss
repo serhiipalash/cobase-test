@@ -46,10 +46,22 @@
     color: $white;
     letter-spacing: 0;
     margin-right: 30px;
+    position: relative;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
 
     &:hover, &--active {
-      @media (min-width: 768px) {
-        color: $mercury;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 108%;
+        height: 1px;
+        background-color: #fff;
+        right: -4%;
+        bottom: -2px;
       }
     }
   }

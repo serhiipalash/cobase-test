@@ -7,6 +7,7 @@ import { loggedin } from '../../../actions/userActions';
 import isRetinaDisplay from '../../../utils/isRetinaDisplay';
 
 import TopBar from '../../organisms/TopBar';
+import BottomBar from '../../organisms/BottomBar';
 
 import User from '../../../../../static/img/User.png';
 import User2x from '../../../../../static/img/User@2x.png';
@@ -35,6 +36,7 @@ class App extends Component {
         <div className="app__content_wrapper">
           {main}
         </div>
+        <BottomBar />
       </div>
     );
   }

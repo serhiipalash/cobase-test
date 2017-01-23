@@ -12,8 +12,15 @@ class GlobeButton extends Component {
   }
 
   render() {
+    const { onClick, xsHidden, xsVisible } = this.props;
+
     return (
-      <span className="globe_button" onClick={this.props.onClick}>
+      <span
+        className={`globe_button ${
+          xsHidden ? 'globe_button--xs-hidden' :
+          xsVisible ? 'globe_button--xs-visible' : ''}`}
+        onClick={onClick}
+      >
         {this.svg.globe_button}
         {this.props.active ?
           <i className="globe_button__red_marker" /> : null}
@@ -25,6 +32,8 @@ class GlobeButton extends Component {
 GlobeButton.propTypes = {
   onClick: PropTypes.func,
   active: PropTypes.bool,
+  xsVisible: PropTypes.bool,
+  xsHidden: PropTypes.bool,
 };
 
 export default GlobeButton;

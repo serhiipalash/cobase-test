@@ -12,8 +12,14 @@ class SearchButton extends Component {
   }
 
   render() {
+    const { onClick, xsHidden, xsVisible } = this.props;
+
     return (
-      <span className="search_button" onClick={this.props.onClick}>
+      <span
+        className={`search_button ${
+          xsHidden ? 'search_button--xs-hidden' :
+          xsVisible ? 'search_button--xs-visible' : ''}`}
+        onClick={onClick}>
         {this.svg.search_button}
       </span>
     );
@@ -22,6 +28,8 @@ class SearchButton extends Component {
 
 SearchButton.propTypes = {
   onClick: PropTypes.func,
+  xsVisible: PropTypes.bool,
+  xsHidden: PropTypes.bool,
 };
 
 export default SearchButton;

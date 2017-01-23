@@ -6,4 +6,16 @@
   &--button {
     cursor: pointer;
   }
+
+  &--xs-hidden {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &--xs-visible {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 }
