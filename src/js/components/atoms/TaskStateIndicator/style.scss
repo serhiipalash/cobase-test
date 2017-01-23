@@ -12,9 +12,15 @@
   padding: 0 10px;
   margin-right: 10px;
 
+  @media (max-width: 350px) {
+    padding: 0 5px;
+    font-size: 11px;
+  }
+
   &--in_process {
     border-color: $purple;
     color: $purple;
+
   }
   &--completed {
     border-color: $light-green;

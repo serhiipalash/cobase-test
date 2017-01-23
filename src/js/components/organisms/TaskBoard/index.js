@@ -28,14 +28,16 @@ class TaskBoard extends Component {
           <h2 className="task_board__header">{task.name}</h2>
           <div className="task_board__description">{task.description}</div>
           <div className="task_board__employees">
-            {task.employees ? task.employees.map(id =>
-              users[id] ?
+            {task.employees ? task.employees.map((id, index) =>
+              users[id] && index < 3 ?
                 <UserPicture
                   key={id}
                   image={users[id].image}
                   onClick={this.employeePictureClicked.bind(this, id)}
                 /> : null
             ) : null}
+            {task.employees.length > 3 ?
+              <i className="task_board__employees_plus_button">+{task.employees.length - 3}</i> : null}
           </div>
           <TaskBoardTags tags={task.tags} />
           <TaskBoardGallery images={task.images} />

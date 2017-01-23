@@ -29,8 +29,28 @@
 
   &__employees {
     margin-bottom: 20px;
+    display: flex;
+
     img {
       margin-right: 5px;
     }
+  }
+
+  &__employees_plus_button {
+    background: $light-green;
+    border: 1px solid $transparent-black;
+    border-radius: 8px;
+    font-family: $heebo;
+    font-size: 13px;
+    color: $white;
+    letter-spacing: 0;
+    line-height: 19px;
+    width: 28px;
+    height: 28px;
+    font-style: normal;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 }
