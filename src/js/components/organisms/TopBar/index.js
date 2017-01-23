@@ -9,8 +9,8 @@ import GlobeButton from '../../atoms/GlobeButton';
 import SettingsButton from '../../atoms/SettingsButton';
 import UserPicture from '../../atoms/UserPicture';
 
-import defaultUser from '../../../../../static/img/defaultUser.png';
-import defaultUser2x from '../../../../../static/img/defaultUser@2x.png';
+import defaultUser from '../../../../../static/img/1.png';
+import defaultUser2x from '../../../../../static/img/1@2x.png';
 
 import './style.scss';
 

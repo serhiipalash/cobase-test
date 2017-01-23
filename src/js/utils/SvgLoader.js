@@ -22,6 +22,7 @@ class SvgLoader {
       task_manager_blue: 'task_manager_blue.svg',
       calendar_white: 'calendar_white.svg',
       edit_white: 'edit_white.svg',
+      plus_button: 'plus_button.svg',
     };
 
     /* eslint-disable */

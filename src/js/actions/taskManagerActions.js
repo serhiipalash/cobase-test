@@ -1,9 +1,16 @@
 import {
   TASK_MANAGER_LOAD_ALL,
-  TASK_MANAGER_SET_ACTIVE
+  TASK_MANAGER_SET_ACTIVE,
+  TASK_MANAGER_UPDATE_TASK
 } from '../constants/ActionTypes';
 
 import { v4 } from 'node-uuid';
+import image1 from '../../../static/img/1@2x.png';
+import image2 from '../../../static/img/2@2x.png';
+import image3 from '../../../static/img/3@2x.png';
+import image4 from '../../../static/img/4@2x.png';
+import image5 from '../../../static/img/5@2x.png';
+
 
 export const loadAll = () => {
   /* Hard code start */
@@ -19,20 +26,22 @@ export const loadAll = () => {
       lastUpdate: Date.now() - 22*60*1000,
       employees: [],
       tags: ['Thirdfloor', 'bathroom', 'tilework'],
-      images: [],
+      images: [image1, image2, image3, image4, image5],
       checklist: [
         {
           id: 1,
           name: 'Install water isolation',
           done: true,
+          progressSegment: 0.7,
+
         },
         {
           id: 2,
           name: 'Prepare for tiling',
           done: false,
+          progressSegment: 0.3,
         },
       ],
-      progress: 0.7,
     },
     {
       id: v4(),
@@ -45,20 +54,27 @@ export const loadAll = () => {
       lastUpdate: Date.now() - 15*60*1000,
       employees: [],
       tags: ['Firstfloor', 'bedroom', 'insulation', 'parquet'],
-      images: [],
+      images: [image2, image3, image4],
       checklist: [
         {
           id: 1,
           name: 'Fix insulation',
           done: false,
+          progressSegment: 0.4,
         },
         {
           id: 2,
           name: 'Lay parquet',
           done: false,
+          progressSegment: 0.4,
+        },
+        {
+          id: 3,
+          name: 'Put a tile',
+          done: true,
+          progressSegment: 0.2,
         },
       ],
-      progress: 0.3,
     },
   ];
   /* Hard code end */
@@ -70,3 +86,5 @@ export const loadAll = () => {
 };
 
 export const setActive = (id) => ({ type: TASK_MANAGER_SET_ACTIVE, id });
+
+export const updateTask = (task) => ({ type: TASK_MANAGER_UPDATE_TASK, task });

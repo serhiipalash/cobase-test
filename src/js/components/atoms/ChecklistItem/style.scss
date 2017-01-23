@@ -1,0 +1,31 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.checklist_item {
+  margin-bottom: 15px;
+
+  &__label {
+    font-family: $heebo;
+    font-size: 15px;
+    color: $gray-dark;
+    letter-spacing: 0;
+    margin-left: 14px;
+    display: inline-block;
+    position: relative;
+
+    &--crossed {
+      color: $gray-blue;
+
+      &::after {
+        content: "";
+        width: 106%;
+        height: 1px;
+        display: block;
+        position: absolute;
+        left: -3%;
+        top: 50%;
+        background-color: $gray-blue;
+      }
+    }
+  }
+}

@@ -10,14 +10,19 @@ import './style.scss';
 
 class ProgressPanel extends Component {
   render() {
-    const { activeTaskId, tasksList: { tasks, tasks: { [activeTaskId]: activeTask={} } } } = this.props.data.taskManager;
+    const { activeTaskId, tasksList: { tasks, tasks: { [activeTaskId]: activeTask={ checklist: [] } } } } = this.props.data.taskManager;
 
-    const projectProgress = reduce(tasks, (out, task) => out + task.progress, 0) / Object.keys(tasks).length;
+    const activeTaskProgress = (activeTask.checklist.reduce((out, item) =>
+      out + (item.done ? item.progressSegment : 0), 0)).toFixed(2)*1;
+
+    const projectProgress = (reduce(tasks, (overal, task) =>
+      overal + task.checklist.reduce((single, item) => single + (item.done ? item.progressSegment : 0), 0), 0) / Object.keys(tasks).length)
+      .toFixed(2)*1;
 
     return (
       <div className="progress_panel">
         <div className="progress_panel__title">PROGRESS</div>
-        <ProgressBar title="Task" progress={activeTask.progress} color="purple" />
+        <ProgressBar title="Task" progress={activeTaskProgress} color="purple" />
         <ProgressBar title="Overal project" progress={projectProgress} color="marine" />
       </div>
     );

@@ -5,9 +5,6 @@ import { Link } from 'react-router';
 import EditButton from '../../atoms/EditButton';
 import CalendarButton from '../../atoms/CalendarButton';
 
-import defaultUser from '../../../../../static/img/defaultUser.png';
-import defaultUser2x from '../../../../../static/img/defaultUser@2x.png';
-
 import SvgLoader from '../../../utils/SvgLoader';
 
 import './style.scss';

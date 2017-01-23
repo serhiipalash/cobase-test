@@ -1,6 +1,7 @@
 import {
   TASK_MANAGER_LOAD_ALL,
   TASK_MANAGER_SET_ACTIVE,
+  TASK_MANAGER_UPDATE_TASK,
 } from '../constants/ActionTypes';
 
 const initialState = {
@@ -28,6 +29,24 @@ function taskManagerReducer(state = initialState, action) {
       return {
         ...state,
         activeTaskId: action.id,
+      };
+    case TASK_MANAGER_UPDATE_TASK:
+      return {
+        ...state,
+        tasksList: {
+          ...state.tasksList,
+          tasks: {
+            ...state.tasksList.tasks,
+            [action.task.id]: {
+              ...state.tasksList.tasks[action.task.id],
+              ...action.task,
+              employees: action.task.employees,
+              tags: action.task.tags,
+              images: action.task.images,
+              checklist: action.task.checklist,
+            },
+          },
+        },
       };
     default:
       return state;

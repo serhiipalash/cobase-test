@@ -1,0 +1,15 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.task_board_tag {
+  background: $light-blue;
+  border-radius: 100px;
+  font-family: $heebo;
+  font-size: 15px;
+  color: $blue;
+  letter-spacing: 0;
+  display: inline-block;
+  padding: 5px 20px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}

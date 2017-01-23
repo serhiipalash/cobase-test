@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 
 import Layout from '../../molecules/Layout';
 import PageHeader from '../../molecules/PageHeader';
+import PageContent from '../../molecules/PageContent';
 import TaskStateIndicator from '../../atoms/TaskStateIndicator';
 import Timer from '../../atoms/Timer';
 import TaskBoard from '../../organisms/TaskBoard';
@@ -29,7 +30,9 @@ class TaskManager extends Component {
           />
           <Timer startTime={activeTask.lastUpdate} />
         </PageHeader>
-        <TaskBoard task={activeTask} />
+        <PageContent>
+          <TaskBoard task={activeTask} />
+        </PageContent>
       </Layout>
     );
   }
