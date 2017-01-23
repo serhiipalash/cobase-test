@@ -24,7 +24,7 @@ export const loadAll = () => {
       inProcess: true,
       createdAt: Date.now() - 7*24*60*60*1000,
       lastUpdate: Date.now() - 22*60*1000,
-      employees: [],
+      employees: [1, 2, 3],
       tags: ['Thirdfloor', 'bathroom', 'tilework'],
       images: [image1, image2, image3, image4, image5],
       checklist: [
@@ -46,13 +46,13 @@ export const loadAll = () => {
     {
       id: v4(),
       name: 'Fix bedroom floor',
-      description: 'Bedroom floor needs some fixing. Descriptions can be longer than only one sentence. Descriptions can be longer than only one sentence. Descriptions can be longer than only one sentence.',
+      description: 'Bedroom floor needs some fixing. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam magni, reprehenderit qui doloribus deserunt eveniet possimus vitae harum libero ducimus quam nobis nulla expedita delectus.',
       completed: false,
       paused: false,
       inProcess: true,
       createdAt: Date.now() - 7*24*60*60*1000,
       lastUpdate: Date.now() - 15*60*1000,
-      employees: [],
+      employees: [1, 3],
       tags: ['Firstfloor', 'bedroom', 'insulation', 'parquet'],
       images: [image2, image3, image4],
       checklist: [

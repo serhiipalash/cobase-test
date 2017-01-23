@@ -9,8 +9,7 @@ import GlobeButton from '../../atoms/GlobeButton';
 import SettingsButton from '../../atoms/SettingsButton';
 import UserPicture from '../../atoms/UserPicture';
 
-import defaultUser from '../../../../../static/img/1.png';
-import defaultUser2x from '../../../../../static/img/1@2x.png';
+import defaultUser from '../../../../../static/img/default_user.png';
 
 import './style.scss';
 
@@ -43,7 +42,7 @@ class TopBar extends Component {
   /* eslint-enable */
 
   render() {
-    const { isSidebarVisible, data: { user, app: { isRetinaDisplay } } } = this.props;
+    const { isSidebarVisible, data: { user } } = this.props;
 
     return (
       <div className={`topbar ${isSidebarVisible ? ' topbar--sidebar_visible' : ''}`}>
@@ -92,7 +91,7 @@ class TopBar extends Component {
             xsHidden={true}
           />
           <UserPicture
-            image={user ? user.image : isRetinaDisplay ? defaultUser2x : defaultUser}
+            image={user ? user.image : defaultUser}
             onClick={this.userPictureClicked.bind(this)}
             xsHidden={true}
           />

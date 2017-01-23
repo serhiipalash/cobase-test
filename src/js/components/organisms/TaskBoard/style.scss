@@ -1,0 +1,36 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.task_board {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__header {
+    font-family: $heebo;
+    font-size: 34px;
+    color: $sidebar-bg;
+    letter-spacing: -0.5px;
+    line-height: 44px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-family: $heebo;
+    font-size: 17px;
+    color: $gray-dark;
+    letter-spacing: 0;
+    line-height: 25px;
+    max-height: 55px;
+    overflow: hidden;
+    margin-bottom: 17px;
+  }
+
+  &__employees {
+    margin-bottom: 20px;
+    img {
+      margin-right: 5px;
+    }
+  }
+}
