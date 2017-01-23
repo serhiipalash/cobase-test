@@ -1,6 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { updateTask } from '../../../actions/taskManagerActions';
+
+import { playSound } from '../../../utils/AudioPlayer';
+import stealthyBeep from '../../../../../static/audio/stealthy-beep.ogg';
+import fillingYourInbox from '../../../../../static/audio/filling-your-inbox.ogg';
+
 import TaskBoardTags from '../../molecules/TaskBoardTags';
 import TaskBoardGallery from '../../molecules/TaskBoardGallery';
 import TaskBoardChecklist from '../../molecules/TaskBoardChecklist';
@@ -13,7 +19,6 @@ import ReassignButton from '../../atoms/ReassignButton';
 import editRound from '../../../../../static/img/edit_round.png';
 
 import './style.scss';
-
 
 class TaskBoard extends Component {
   /* eslint-disable */
@@ -29,12 +34,31 @@ class TaskBoard extends Component {
     console.info('Edit Gray Button clicked');
   }
 
-  completeButtonClicked(taskId) {
-    console.info('Complete Button clicked', taskId);
+  completeButtonClicked() {
+    let updatedTask = Object.assign({}, this.props.task,
+      {
+        completed: true,
+        paused: false,
+        inProcess: false,
+        checklist: this.props.task.checklist.map(item => ({ ...item, done: true })),
+        lastUpdate: Date.now(),
+      }
+    );
+    this.props.dispatch(updateTask(updatedTask));
+    playSound({ url: fillingYourInbox });
   }
 
-  pauseButtonClicked(taskId) {
-    console.info('Pause Button clicked', taskId);
+  pauseButtonClicked() {
+    let updatedTask = Object.assign({}, this.props.task,
+      {
+        completed: false,
+        paused: true,
+        inProcess: false,
+        lastUpdate: Date.now(),
+      }
+    );
+    this.props.dispatch(updateTask(updatedTask));
+    playSound({ url: stealthyBeep });
   }
 
   reassignButtonClicked(taskId) {
@@ -54,11 +78,11 @@ class TaskBoard extends Component {
           <div className="task_board__top_buttons">
             <div className="task_board__top_buttons_left">
               <CompleteButton
-                onClick={this.completeButtonClicked.bind(this, task.id)}
+                onClick={this.completeButtonClicked.bind(this)}
               />
               <span className="task_board__text_divider">or</span>
               <PauseButton
-                onClick={this.pauseButtonClicked.bind(this, task.id)}
+                onClick={this.pauseButtonClicked.bind(this)}
               />
             </div>
             <div className="task_board__top_buttons_right">
@@ -96,11 +120,11 @@ class TaskBoard extends Component {
           <TaskBoardChecklist task={task} />
           <div className="task_board__bottom_buttons">
             <CompleteButton
-              onClick={this.completeButtonClicked.bind(this, task.id)}
+              onClick={this.completeButtonClicked.bind(this)}
             />
             <span className="task_board__text_divider">or</span>
             <PauseButton
-              onClick={this.pauseButtonClicked.bind(this, task.id)}
+              onClick={this.pauseButtonClicked.bind(this)}
             />
           </div>
         </div>

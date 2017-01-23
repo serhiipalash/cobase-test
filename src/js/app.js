@@ -40,12 +40,18 @@ if (module.hot) {
   });
 }
 
+import { playSound } from './utils/AudioPlayer';
+import inPassing from '../../static/audio/in-passing.ogg';
+
 const history = syncHistoryWithStore(browserHistory, store);
 
-history.listen(location => {
-  /* eslint-disable */
-  console.info('location', location);
-  /* eslint-enable */
+let index = 0;
+
+history.listen(() => {
+  if (index !== 0) {
+    playSound({ url: inPassing });
+  }
+  ++index;
 });
 
 

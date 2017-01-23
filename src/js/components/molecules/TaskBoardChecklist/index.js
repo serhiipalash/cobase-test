@@ -25,8 +25,19 @@ class TaskBoardChecklist extends Component {
       }
       return item;
     });
-    let updatedTask = Object.assign({}, task, { checklist: updatedChecklist })
-    this.props.dispatch(updateTask(updatedTask))
+
+    let completed = !updatedChecklist.filter(item => !item.done).length;
+
+    let updatedTask = Object.assign({}, task,
+      {
+        checklist: updatedChecklist,
+        completed: completed,
+        inProcess: !completed,
+        paused: false,
+        lastUpdate: Date.now(),
+      }
+    );
+    this.props.dispatch(updateTask(updatedTask));
   }
 
   render() {
