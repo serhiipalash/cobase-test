@@ -2,5 +2,9 @@
 @import "../../../../scss/_fonts.scss";
 
 .page_content {
-  padding: 25px 30px;
+  padding: 25px 30px 200px 30px;
+
+  @media (max-width: 767px) {
+    padding: 14px 19px 23px 19px;
+  }
 }

@@ -5,6 +5,10 @@
   border-top: 1px solid $silver;
   min-height: 140px;
 
+  @media (max-width: 767px) {
+    padding-bottom: 15px;
+  }
+
   &__title {
     font-family: $heebo;
     font-size: 17px;

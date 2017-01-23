@@ -4,6 +4,10 @@
 .task_board_gallery {
   border-top: 1px solid $silver;
 
+  @media (max-width: 767px) {
+    padding-bottom: 12px;
+  }
+
   &__title {
     font-family: $heebo;
     font-size: 17px;
