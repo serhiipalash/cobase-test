@@ -1,0 +1,108 @@
+@import "../../../../scss/_colors.scss";
+@import "../../../../scss/_fonts.scss";
+
+.task_manager {
+  &__header_left {
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 14px;
+    border-top-left-radius: 4px;
+    margin-left: -14px;
+
+    @media (max-width: 767px) {
+      padding-left: 0;
+    }
+
+    .task_manager__prev_task_button {
+      display: none;
+
+      @media (max-width: 767px) {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
+        width: 36px;
+        border-left: 1px solid $dust;
+        display: flex;
+        border-left: none;
+        border-top-left-radius: 4px;
+      }
+    }
+  }
+
+  &__header_right {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    height: 100%;
+    border-top-right-radius: 4px;
+
+    .task_manager__arrow_right {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .task_manager__prev_task_button {
+      width: 53px;
+      border-left: 1px solid $dust;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      cursor: pointer;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      &:hover {
+        @media (min-width: 768px) {
+          background-color: $silver-light;
+        }
+      }
+    }
+  }
+
+  &__next_task_button {
+    width: 124px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    padding-right: 14px;
+    border-top-right-radius: 4px;
+
+    @media (min-width: 768px) {
+      border-left: 1px solid $dust;
+    }
+
+    &:hover {
+      @media (min-width: 768px) {
+        background-color: $silver-light;
+      }
+    }
+  }
+
+  // &__prev_task_button {
+  //   width: 53px;
+  //   border-left: 1px solid $dust;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 100%;
+  //   cursor: pointer;
+
+  //   @media (max-width: 767px) {
+  //     display: none;
+  //   }
+
+  //   &:hover {
+  //     @media (min-width: 768px) {
+  //       background-color: $silver-light;
+  //     }
+  //   }
+  // }
+}

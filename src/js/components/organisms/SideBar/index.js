@@ -13,7 +13,11 @@ import './style.scss';
 
 class SideBar extends Component {
   render() {
-    const { isRetinaDisplay } = this.props.data.app;
+    const {
+      app: { isRetinaDisplay },
+      taskManager: { activeTaskId },
+      routing: { locationBeforeTransitions: { pathname } }
+    } = this.props.data;
 
     return (
       <div className="sidebar">
@@ -27,7 +31,8 @@ class SideBar extends Component {
         </header>
         <section className="sidebar__content">
           <SideBarOptions />
-          <ProgressPanel />
+          {pathname === '/task-manager' && activeTaskId !== null ?
+            <ProgressPanel /> : null}
         </section>
         <footer className="sidebar__footer"></footer>
       </div>

@@ -4,11 +4,11 @@ import { Checkbox } from 'antd';
 import './style.scss';
 
 import { playSound } from '../../../utils/AudioPlayer';
-import noManners from '../../../../../static/audio/no-manners.ogg';
+import smallFootprint from '../../../../../static/audio/small-footprint.ogg';
 
 class ChecklistItem extends Component {
   itemClicked() {
-    playSound({ url: noManners });
+    playSound({ url: smallFootprint });
   }
 
   render() {

@@ -23,6 +23,8 @@ class SvgLoader {
       calendar_white: 'calendar_white.svg',
       edit_white: 'edit_white.svg',
       plus_button: 'plus_button.svg',
+      small_arrow_right: 'small_arrow_right.svg',
+      small_arrow_left: 'small_arrow_left.svg',
     };
 
     /* eslint-disable */

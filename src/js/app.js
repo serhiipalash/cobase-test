@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, hashHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -39,9 +40,18 @@ if (module.hot) {
   });
 }
 
+const history = syncHistoryWithStore(browserHistory, store);
+
+history.listen(location => {
+  /* eslint-disable */
+  console.info('location', location);
+  /* eslint-enable */
+});
+
+
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={history}>
       <Route component={App}>
         <Route path="/" components={{ main: Home, sidebar: SideBar }}/>
         <Route path="overview" components={{ main: Overview, sidebar: SideBar }}/>
